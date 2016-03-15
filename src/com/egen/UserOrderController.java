@@ -25,9 +25,9 @@ public class UserOrderController {
 	
 	
 	@RequestMapping(value = "{id}" ,method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
-	public UserOrder findOrder(@PathVariable("id") String id)throws UserNotFoundException{
+	public List<UserOrder> showOrders(@PathVariable("id") String id)throws UserNotFoundException{
 		
-     return orderService.findOrder(id);
+     return orderService.showOrder(id);
 	}
 	
 	@RequestMapping(value = "{id,}/{Title}" , method=RequestMethod.PUT,consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
