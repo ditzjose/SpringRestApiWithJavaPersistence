@@ -33,6 +33,11 @@ public class UserService {
 			throw new UserNotFoundException();
 		}
 	}
+	public List<User>   findId(String password ) throws UserNotFoundException 
+	{
+		 List<User> user = userDAO.findId(password);
+		return user;
+	}
 	
 	public User createUser(User user) throws BadRequestByUser
 	{

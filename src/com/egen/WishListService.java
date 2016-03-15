@@ -28,6 +28,12 @@ public class WishListService {
 			throw new UserNotFoundException();
 		}
 	}
+	public List<WishList> findMovieTitle(String userId ) throws UserNotFoundException 
+	{
+		List<WishList> wishList = wishListDAO.findMovieTitle(userId);
+		return wishList;
+		
+	}
 	public WishList createUser(WishList wishList) throws BadRequestByUser
 	{
 		wishList.setId(wishList.hashCode()+"");

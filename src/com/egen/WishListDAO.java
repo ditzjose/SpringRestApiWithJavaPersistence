@@ -24,6 +24,13 @@ public class WishListDAO {
 		 return wishList;
 	}
 	
+	public List<WishList> findMovieTitle(String userId)
+	{
+		TypedQuery<WishList> query1 = entityManager.createQuery("SELECT u FROM WishList u where u.userId='"+userId+"'", WishList.class); // User is case sensitive
+		List<WishList> wishList = query1.getResultList();
+		 return wishList;
+	}
+	
 	public WishList  findOne(String id )  
 	{
 		return entityManager.find(WishList.class, id);

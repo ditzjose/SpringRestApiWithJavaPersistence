@@ -29,6 +29,8 @@ public class UserControl {
 	{
 		return service.findOne(id);
 	}
+	
+	
 	@RequestMapping(method=RequestMethod.POST,consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public User create(@RequestBody User user) throws BadRequestByUser
 	{

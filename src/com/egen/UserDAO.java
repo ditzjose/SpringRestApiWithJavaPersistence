@@ -26,6 +26,13 @@ public class UserDAO {
 		 return userslist;
 	}
 	
+	public List<User> findId(String password)
+	{
+		TypedQuery<User> query1 = entityManager.createQuery("SELECT u FROM User u where u.password='"+password+"'", User.class); // User is case sensitive
+		List<User> userslist = query1.getResultList();
+		 return userslist;
+	}
+	
 	public User  findOne(String id )  
 	{
 		return entityManager.find(User.class, id);
